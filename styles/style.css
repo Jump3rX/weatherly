@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+}
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.buttons {
+  margin-top: 8px;
+}
+.bottom-border-input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 8px;
+  box-shadow: none;
+  width: 250px;
+  font-family: "Poppins", sans-serif;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.bottom-border-input:focus {
+  border: none;
+  border-bottom: 2px solid #007bff;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.4);
+}
+
+.gradient-button {
+  background: linear-gradient(to bottom right, #007aff, #00c6ff);
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 13px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.gradient-button:hover {
+  background: linear-gradient(to bottom right, #00c6ff, #007aff);
+}
+.gradient-button2 {
+  background: linear-gradient(to bottom right, #ff5f6d, #ffc371);
+  color: #fff;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  padding: 10px 20px;
+  border-radius: 13px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.gradient-button2:hover {
+  background: linear-gradient(to bottom right, #ffc371, #ff5f6d);
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  margin: 20px auto;
+}
+
+.card-header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: lightseagreen;
+}
+
+.card-title {
+  margin: 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.temperature {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 20px;
+}
+
+.description {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.label {
+  margin-right: 5px;
+  font-weight: bold;
+}
