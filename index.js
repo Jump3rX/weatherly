@@ -2,7 +2,7 @@
 const searchWeather = document.querySelector(".search-btn");
 const resultsContainer = document.querySelector(".results-container");
 const myLocationBtn = document.querySelector(".current-location-btn");
-let apiK = "da2b913513d21c808ccb02adf676f12b";
+let apiK = "YOUR KEY";
 
 const options = {
   enableHighAccuracy: true,
