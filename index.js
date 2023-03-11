@@ -1,30 +1,43 @@
 "use strict";
 const searchWeather = document.querySelector(".search-btn");
 const resultsContainer = document.querySelector(".results-container");
+const myLocationBtn = document.querySelector(".current-location-btn");
 let apiK = "da2b913513d21c808ccb02adf676f12b";
-console.log(searchWeather);
+
+const options = {
+  enableHighAccuracy: true,
+  timeout: 10000,
+};
 
 searchWeather.addEventListener("click", function (e) {
+  e.preventDefault();
   let locationValue = document.querySelector("#location").value;
   fetch(
     `http://api.openweathermap.org/geo/1.0/direct?q=${locationValue}&appid=${apiK}`
   )
     .then((res) => res.json())
-    .then((data) => getWeather(data));
+    .then((data) => getWeather(data[0].lat, data[0].lon));
 });
 
-function getWeather(data) {
-  let [lat, long] = [data[0].lat, data[0].lon];
+myLocationBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  navigator.geolocation.getCurrentPosition(myPos);
+});
+
+function myPos(position) {
+  //console.log(position.coords.latitude, position.coords.longitude);
+  getWeather(position.coords.latitude, position.coords.longitude);
+}
+
+function getWeather(lat, long) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiK}`
   )
     .then((res) => res.json())
     .then((data) => showResults(data));
 }
-
 function showResults(data) {
   resultsContainer.innerHTML = "";
-  console.log(data);
   let html = `
   <div class="card">
   <div class="card-header">
